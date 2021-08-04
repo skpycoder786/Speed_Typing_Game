@@ -1,0 +1,20 @@
+#Title{
+    text-align: center;
+}
+
+main{
+    width: 60%;
+    margin: 0 auto;
+   }
+
+#user_input{
+    text-align: center;
+}
+
+#buttons{
+    text-align: center;
+}
+
+article table{
+    width: 100%;
+}
