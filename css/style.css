@@ -18,3 +18,26 @@ main{
 article table{
     width: 100%;
 }
+
+.incorr {
+  color: red;
+  text-decoration: underline;
+  background:yellow;
+}
+
+.corr {
+  color: black;
+}
+
+.wpm_div  {
+    display: none;
+  }
+.para {
+    color: gray;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
