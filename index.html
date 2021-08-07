@@ -2,82 +2,98 @@
 <html lang="en">
 
     <head>
-        <title>Speed_typing</title>
+        <title>Speed Typing</title>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
     </head>
 
-    <body>
-
-        <header>
-                <h1>ABSOLUTE-B</h1>
-        </header>
+    <body onload="setTime()">
+                
 
         <main>
-
+       <div class="logo">ABSOLUTE-B</div>
+       <div class="row">
+         <div class="col-1">
+           <h2>Hello!<br>Buddies</h2>
+           <h3>We have built a Speed Typing Game w(°ｏ°)w
+            <h4>Put your hands on</h4>
+            
+            <h1>Keyboard</h1>
+           
+         </div>
+       </div>
+          <div class="container">
                 <div id="Title">
                     <h1>Speed Typing Game</h1>
                 </div>
 
                 <div id="user_input">
                     <label for="mode">Playing Mode:</label>              
-                    <input type="text" list="search" id="mode" required>
-                    <datalist id="search">
-                        <option value="Easy">
-                        <option value="Medium">
-                        <option value="Hard">
-                    </datalist>
+                    <select id="mode" onblur="paraMODE()">
+                        <option value="0">Easy</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Hard</option>
+                    </select>
+                    <label for="time">Set Time:</label>              
+                    <select id="time" onblur="setTime()">
+                        <option value="0">1 min</option>
+                        <option value="1">2 mins</option>
+                        <option value="2">5 mins</option>
+                    </select>
+                    
                 </div><br>
 
                 <section>
-
                     <article id="functions">
-                        <table border="1">
+                        <table border="1" cellspacing="10" class="center">
                             <thead>
-                                <tr>
-                                    <th>Timer</th>
-                                    <th>Wpm</th>
-                                    <th>Accuracy</th>
+                                <tr >
+                                    <th class="error_div">
+                                        <div class="title">Errors</div>
+                                        <div class="err_value" id="err_value">0</div>
+                                    </th>
+                                    <th class="timer">
+                                        <div class="title">Time</div>
+                                        <div class="time_value" id="time_value">
+                                        </div>
+                                    </th>
+                                    <th class="accu_div">
+                                        <div class="title">Accuracy</div>
+                                        <div class="accu_value" id="accu_value">100%</div>
+                                    </th>
+                                    <th class="wpm_div">
+                                        <div class="title">WPM</div>
+                                        <div class="wpm_value" id="wpm_value">100</div>
+                                    </th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>00:00</td>
-                                    <td>0</td>
-                                    <td>100%</td>
-                                </tr>
-                            </tbody>
                         </table>
                     </article>
 
-                    <article id="paragraph">
-                        <p>
-                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-                        </p>
-                    </article>
+                    <div class="para">First select the mode and then start the typing.</div><br>
 
-                    <article id="container">
-                        <textarea>
-                            Type here...dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.
-                        </textarea> 
-                    </article>
-
+                        <textarea class="input_area" placeholder="Type here to start the game :)" oninput="status()"
+                            onfocus="start()"></textarea>
+                           
                     <div id="buttons">
-                        <button type="reset" name="reset button" value="Reset">
+                        <button type="reset" onclick="reset()">
                             Reset
                         </button>
-                        <button>Stop</button>
+                        <button onclick="end()">
+                            STOP
+                        </button>
                     </div>
 
                 </section>
-
+                
+                  
+          </div>
         </main>
-
+      
+        
+        <script src="main.js"></script>
     </body>
 
 </html>
